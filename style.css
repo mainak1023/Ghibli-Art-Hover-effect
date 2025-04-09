@@ -12,17 +12,20 @@ body {
     flex-wrap: wrap;
     min-height: 100vh;
     background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    padding: 20px;
 }
 
 .container {
-    padding: 2rem;
+    width: 100%;
+    max-width: 600px;
+    padding: 1rem;
 }
 
 .box {
     position: relative;
-    width: 550px;
-    height: 700px;
-    margin: 50px;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    margin: 0 auto;
     cursor: pointer;
     border-radius: 20px;
     overflow: hidden;
@@ -76,4 +79,25 @@ body {
 
 .box:hover .imgBx:nth-child(2) {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* Responsive tweaks */
+@media screen and (max-width: 768px) {
+    .container {
+        padding: 1rem;
+    }
+
+    .box {
+        border-radius: 15px;
+    }
+
+    .box .imgBx img {
+        border-radius: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .box {
+        aspect-ratio: 3 / 4;
+    }
 }
